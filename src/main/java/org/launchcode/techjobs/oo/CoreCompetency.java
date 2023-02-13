@@ -11,7 +11,7 @@ public class CoreCompetency {
     public CoreCompetency() {
         this.id = nextId;
         nextId++;
-        this.value = "Data not available";
+
     }
 
     public CoreCompetency(String value) {
