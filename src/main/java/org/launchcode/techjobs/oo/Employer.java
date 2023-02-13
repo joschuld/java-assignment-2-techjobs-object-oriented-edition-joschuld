@@ -11,11 +11,13 @@ public class Employer {
     public Employer() {
         id = nextId;
         nextId++;
+        this.value = "Data not available";
     }
 
     public Employer(String value) {
         this();
         this.value = value;
+
     }
 
     // Custom toString, equals, and hashCode methods:

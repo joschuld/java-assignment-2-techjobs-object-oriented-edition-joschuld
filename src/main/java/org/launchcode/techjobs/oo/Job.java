@@ -102,6 +102,7 @@ public class Job {
     //TODO: Code the custom toString() method for Task 5 TDD
     @Override
     public String toString(){
+        String errorMessage = "Data not available";
 
         return  "\n" +
                 "ID: " + this.getId() + "\n" +

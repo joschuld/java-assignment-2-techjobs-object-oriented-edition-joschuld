@@ -72,5 +72,20 @@ public class JobTest {
         assertEquals(job1.toString(),spec);
     }
 
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job job1 = new Job("Product tester", new Employer(), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String spec =  "\n" +
+                "ID: " + job1.getId() + "\n" +
+                "Name: " +  job1.getName() + "\n" +
+                "Employer: " + "Data not available" + "\n" +
+                "Location: " + job1.getLocation() + "\n" +
+                "Position Type: " + job1.getPositionType() + "\n" +
+                "Core Competency: " + job1.getCoreCompetency() +
+                "\n";
+
+        assertEquals(job1.toString(), spec);
+
+    }
 
 }
