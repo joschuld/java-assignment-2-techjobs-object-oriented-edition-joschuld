@@ -30,6 +30,7 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
@@ -101,16 +102,45 @@ public class Job {
 
     //TODO: Code the custom toString() method for Task 5 TDD
     @Override
-    public String toString(){
+    //I have set this up so it handles both empty fields, and null values, prior to the return statement
+    public String toString() {
+        int id;
+        String name;
+        String employer;
+        String location;
+        String position;
+        String competency;
+
         String errorMessage = "Data not available";
+
+        if (this.getName() == null || String.valueOf(this.getName()) == "") {
+            name = errorMessage;
+        } else {name = this.getName();}
+
+        if (this.getEmployer() == null || String.valueOf(this.getEmployer()) == "") {
+            employer = errorMessage;
+        } else { employer = String.valueOf(this.getEmployer());}
+
+        if (this.getLocation() == null || String.valueOf(this.getLocation()) == "") {
+            location = errorMessage;
+        } else { location = String.valueOf(this.getLocation());}
+
+        if (this.getPositionType() == null || String.valueOf(this.getPositionType()) == "") {
+            position = errorMessage;
+        } else {position = String.valueOf(this.getPositionType());}
+
+        if (this.getCoreCompetency() == null || String.valueOf(this.getCoreCompetency()) == "") {
+            competency = errorMessage;
+        } else {competency = String.valueOf(this.getCoreCompetency());}
+
 
         return  "\n" +
                 "ID: " + this.getId() + "\n" +
-                "Name: " +  this.getName() + "\n" +
-                "Employer: " + this.getEmployer() + "\n" +
-                "Location: " + this.getLocation() + "\n" +
-                "Position Type: " + this.getPositionType() + "\n" +
-                "Core Competency: " + this.getCoreCompetency() + "\n"
+                "Name: " +  name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + position + "\n" +
+                "Core Competency: " + competency + "\n"
                 ;
     }
 }

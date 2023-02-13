@@ -11,6 +11,7 @@ public class PositionType {
     public PositionType() {
         id = nextId;
         nextId++;
+        this.value = "Data not available";
     }
 
     public PositionType(String value) {

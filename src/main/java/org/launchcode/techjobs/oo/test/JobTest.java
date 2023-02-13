@@ -51,6 +51,7 @@ public class JobTest {
 
     //TODO: TDD TO BUILD THE toString() METHOD
     @Test
+//    testTestToStringStartsAndEndsWithNewLineCallsAssertions
     public void testToStringStartsAndEndsWithNewLine(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String spec = "\n" + "\n";
@@ -58,7 +59,7 @@ public class JobTest {
         assertEquals(job1.toString().charAt(0) + String.valueOf(job1.toString().charAt(lastCharIndex)), spec);
 }
     @Test
-    public void testToStringContainsCorrectLabelAndData(){
+    public void testToStringContainsCorrectLabelsAndData(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String spec =
                 "\n" +
@@ -73,15 +74,17 @@ public class JobTest {
     }
 
     @Test
+    // I made this test handle both empty fields and null
+    // -- "" or null --
     public void testToStringHandlesEmptyField(){
-        Job job1 = new Job("Product tester", new Employer(), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job1 = new Job(null, new Employer(""), new Location(), new PositionType(""), new CoreCompetency());
         String spec =  "\n" +
                 "ID: " + job1.getId() + "\n" +
-                "Name: " +  job1.getName() + "\n" +
+                "Name: " +  "Data not available" + "\n" +
                 "Employer: " + "Data not available" + "\n" +
-                "Location: " + job1.getLocation() + "\n" +
-                "Position Type: " + job1.getPositionType() + "\n" +
-                "Core Competency: " + job1.getCoreCompetency() +
+                "Location: " + "Data not available" + "\n" +
+                "Position Type: " + "Data not available" + "\n" +
+                "Core Competency: " + "Data not available" +
                 "\n";
 
         assertEquals(job1.toString(), spec);
