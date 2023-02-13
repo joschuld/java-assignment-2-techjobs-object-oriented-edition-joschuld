@@ -78,7 +78,7 @@ public class JobTest {
     // I made this test handle both empty fields and null
     // -- "" or null --
     public void testToStringHandlesEmptyField(){
-        Job job1 = new Job(null, new Employer(""), new Location(), new PositionType(""), new CoreCompetency());
+        Job job1 = new Job(null, new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         String spec =  "\n" +
                 "ID: " + job1.getId() + "\n" +
                 "Name: " +  "Data not available" + "\n" +
