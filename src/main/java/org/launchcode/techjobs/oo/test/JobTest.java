@@ -52,7 +52,7 @@ public class JobTest {
 
     //TODO: TDD TO BUILD THE toString() METHOD
     @Test
-//    testTestToStringStartsAndEndsWithNewLineCallsAssertions
+//    the one failing test, "testTestToStringStartsAndEndsWithNewLineCallsAssertions"
     public void testToStringStartsAndEndsWithNewLine(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String spec = "\n" + "\n";
